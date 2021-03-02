@@ -14,6 +14,7 @@
   "license": "ISC",
   "dependencies": {
     "@uniswap/lib": "^1.1.4",
-    "@uniswap/v2-core": "^1.0.1"
+    "@uniswap/v2-core": "^1.0.1",
+    "truffle-hdwallet-provider": "^1.0.17"
   }
 }

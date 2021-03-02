@@ -1,3 +1,6 @@
+var HDWalletProvider = require("truffle-hdwallet-provider");
+const CONFIG = require("../credentials.js");
+
 /**
  * Use this file to configure your truffle project. It's seeded with some
  * common settings for different networks and features like migrations,
@@ -47,6 +50,24 @@ module.exports = {
       port: 8545,            // Standard Ethereum port (default: none)
       network_id: "*",       // Any network (default: none)
      },
+    bscTestnet: {
+        provider: () => new HDWalletProvider(CONFIG.wallet.PKEY, `https://data-seed-prebsc-1-s1.binance.org:8545`),
+        network_id: "*",
+        confirmations: 5,
+        timeoutBlocks: 10,
+        skipDryRun: true,
+        // gas: 10000000,
+        // gasPrice: 200000000000
+    },
+    kovan: {
+      provider: () => new HDWalletProvider(CONFIG.wallet.PKEY, `https://kovan.infura.io/v3/${CONFIG.infura.mainEndpoint}`),
+      network_id: "*",
+      confirmations: 5,
+      timeoutBlocks: 10,
+      skipDryRun: true,
+      // gas: 10000000,
+      // gasPrice: 200000000000
+  },
     // Another network with more advanced options...
     // advanced: {
     // port: 8777,             // Custom port

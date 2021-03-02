@@ -13,6 +13,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@openzeppelin/contracts": "^2.5.1"
+    "@nomiclabs/hardhat-ethers": "^2.0.1",
+    "@nomiclabs/hardhat-truffle5": "^2.0.0",
+    "@openzeppelin/contracts": "^2.5.1",
+    "truffle-hdwallet-provider": "^1.0.17"
   }
 }
