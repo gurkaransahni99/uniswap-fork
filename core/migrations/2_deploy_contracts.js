@@ -6,6 +6,9 @@ module.exports = async function (deployer, _network, addresses) {
   await deployer.deploy(Factory, addresses[0]);
   const factory = await Factory.deployed();
 
+  let initHash = await factory.INIT_CODE_HASH();
+  console.log(initHash)
+
   // await deployer.deploy(Token1);
   // await deployer.deploy(Token2);
   // const token1 = await Token1.deployed();
