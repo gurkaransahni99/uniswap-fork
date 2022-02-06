@@ -13,7 +13,7 @@ import './interfaces/IWETH.sol';
 contract UniswapV2Router02 /*is IUniswapV2Router02*/ {
     using SafeMath for uint;
 
-    address public immutable /*override*/ factory;
+    address public constant /*override*/ factory = 0xb8d44FEA6e7E36519b541d94601baE2f15A3aBbE;
     address public immutable /*override*/ WETH;
 
     modifier ensure(uint deadline) {
@@ -21,8 +21,8 @@ contract UniswapV2Router02 /*is IUniswapV2Router02*/ {
         _;
     }
 
-    constructor(address _factory, address _WETH) public {
-        factory = _factory;
+    constructor(address _WETH) public {
+        // factory = _factory;
         WETH = _WETH;
     }
 

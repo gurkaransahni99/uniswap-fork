@@ -17,5 +17,8 @@
     "@nomiclabs/hardhat-truffle5": "^2.0.0",
     "@openzeppelin/contracts": "^2.5.1",
     "truffle-hdwallet-provider": "^1.0.17"
+  },
+  "devDependencies": {
+    "truffle-plugin-verify": "^0.5.21"
   }
 }

@@ -28,6 +28,12 @@ const CONFIG = require("../credentials.js");
 // const mnemonic = fs.readFileSync(".secret").toString().trim();
 
 module.exports = {
+
+  plugins: ['truffle-plugin-verify'],
+  api_keys: {
+    bscscan: 'JIQMIVJ9M7GRY2QKYRXSGHC5FVS3U61AK8'
+  },
+
   /**
    * Networks define how you connect to your ethereum client and let you set the
    * defaults web3 uses to send transactions. If you don't specify one truffle
@@ -52,7 +58,7 @@ module.exports = {
      },
     bscTestnet: {
         provider: () => new HDWalletProvider(CONFIG.wallet.PKEY, `https://data-seed-prebsc-1-s1.binance.org:8545`),
-        network_id: "*",
+        network_id: "97",
         confirmations: 5,
         timeoutBlocks: 10,
         skipDryRun: true,

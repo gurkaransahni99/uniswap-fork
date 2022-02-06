@@ -16,7 +16,7 @@ const WETH = artifacts.require('WETH.sol');
 
 module.exports = async function (deployer, _network, addresses) {
   let weth;
-  const FACTORY_ADDRESS = '0x79063341A914c3308C63a3F6D187Fe54286d6CcB';
+  const FACTORY_ADDRESS = '0xb8d44FEA6e7E36519b541d94601baE2f15A3aBbE';
 
   if(_network === 'mainnet') {
     weth = await WETH.at('0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2');
@@ -24,7 +24,7 @@ module.exports = async function (deployer, _network, addresses) {
     await deployer.deploy(WETH);
     weth = await WETH.deployed();
   }
-  await deployer.deploy(Router, FACTORY_ADDRESS, weth.address, {from: addresses[0]});
+  await deployer.deploy(Router, weth.address, {from: addresses[0]});
 
   // await deployer.deploy({data: bytecode, arguments: [FACTORY_ADDRESS, weth.address]}, {from: addresses[0]});
   // const contract = new web3.eth.Contract(abi);
